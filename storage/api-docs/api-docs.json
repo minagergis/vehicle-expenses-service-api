@@ -1,0 +1,162 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "Afaqy task Documentation",
+        "description": "This service is providing endpoints to filter data of the vehicle expences from multi linked tables in the database through database view",
+        "contact": {
+            "email": "minaatifabduallah@gmail.com"
+        },
+        "version": "1.0.0"
+    },
+    "servers": [
+        {
+            "url": "http://127.0.0.1:8000"
+        }
+    ],
+    "paths": {
+        "/api/v1/expenses-list": {
+            "get": {
+                "tags": [
+                    "Vehicle: Expenses"
+                ],
+                "summary": "Get list of the vechile expenses.",
+                "description": "This endpoint to list all the vehicle expences concerning the filter criteria",
+                "operationId": "VechileExpensesList",
+                "parameters": [
+                    {
+                        "name": "name",
+                        "in": "query",
+                        "description": "Apply filtering by Vechile name.",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "type",
+                        "in": "query",
+                        "description": "Apply filtering by expense type.",
+                        "required": false,
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    {
+                        "name": "max_cost",
+                        "in": "query",
+                        "description": "Apply filtering by maximum expense cost.",
+                        "required": false,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    },
+                    {
+                        "name": "min_cost",
+                        "in": "query",
+                        "description": "Apply filtering by minimum expense cost.",
+                        "required": false,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    },
+                    {
+                        "name": "max_creation_date",
+                        "in": "query",
+                        "description": "Apply filtering by maximum expence creation date .",
+                        "required": false,
+                        "schema": {
+                            "type": "datetime"
+                        }
+                    },
+                    {
+                        "name": "min_creation_date",
+                        "in": "query",
+                        "description": "Apply filtering by minimum expense creation date.",
+                        "required": false,
+                        "schema": {
+                            "type": "datetime"
+                        }
+                    },
+                    {
+                        "name": "cost_sort",
+                        "in": "query",
+                        "description": "Apply sort filter to expences cost.",
+                        "schema": {
+                            "type": "string",
+                            "enum": [
+                                "ASC",
+                                "DESC"
+                            ]
+                        }
+                    },
+                    {
+                        "name": "creation_date_sort",
+                        "in": "query",
+                        "description": "Apply sort filter to expences creation date.",
+                        "schema": {
+                            "type": "string",
+                            "enum": [
+                                "ASC",
+                                "DESC"
+                            ]
+                        }
+                    },
+                    {
+                        "name": "limit",
+                        "in": "query",
+                        "description": "Apply limit to the returned expences data.",
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation",
+                        "content": {
+                            "application/json": {
+                                "schema": {},
+                                "example": [
+                                    {
+                                        "id": "1",
+                                        "vehicleName": "Prof. Garland Lang",
+                                        "plateNumber": "3290804",
+                                        "cost": "3",
+                                        "createdAt": "2019-11-20 11:53:05",
+                                        "type": "fuel"
+                                    },
+                                    {
+                                        "id": "1",
+                                        "vehicleName": "Prof. Garland Lang",
+                                        "plateNumber": "3290804",
+                                        "cost": "2",
+                                        "createdAt": "1985-12-09 00:00:00",
+                                        "type": "insurance"
+                                    }
+                                ]
+                            }
+                        }
+                    },
+                    "429": {
+                        "description": "Too many requests"
+                    },
+                    "500": {
+                        "description": "Internal Server Error"
+                    }
+                }
+            }
+        }
+    },
+    "tags": [
+        {
+            "name": "Vehicle: Expenses",
+            "description": "vehicle list."
+        }
+    ],
+    "security": [
+        []
+    ]
+}
