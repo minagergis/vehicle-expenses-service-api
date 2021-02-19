@@ -2,7 +2,7 @@
  ![Design pattern: Repository](https://img.shields.io/badge/Design%20pattern-Repository-purple.svg?style=flat) 
  ![PHP Framework: Laravel 8.12](https://img.shields.io/badge/PHP%20Framework-%20Laravel%208.12-red.svg?style=flat)
 ![Documentation: Swagger](https://img.shields.io/badge/Documentation-Swagger-blue.svg?style=flat)
-## Vehicle expences listing service
+## Vehicle expenses listing service
 A vehicle expenses service that can combine and retrieve expenses related to vehicles across different tables through a database view.
 
 ## Installed software and configuration
@@ -37,22 +37,22 @@ A vehicle expenses service that can combine and retrieve expenses related to veh
 ### GET REQUEST
 The services is using the Restful API request.
 
-###### Get expences list by filter
-* This request will return all vehicle expences that match the provided criteria
+###### Get expenses list by filter
+* This request will return all vehicle expenses that match the provided criteria
 * Get request to [http://127.0.0.1:8000/api/v1/expenses-list](http://127.0.0.1:8000/api/v1/expenses-list)
 * possible payload should be like the example below
 
 |Attribute|Type|Description|Optional|Example/
 |:----------:|:-----:|:----------:|:----------:|:----------:|
 |name|string|represent vehicle name|yes|name=Garland Lang|
-|type|array|represent expences types|yes|type=['fuel']|
+|type|array|represent expenses types|yes|type=['fuel']|
 |max_cost|integer|represent maximum expense cost|yes|max_cost = 10|
 |min_cost|integer|represent minimum expense cost|yes|min_cost = 5|
 |max_creation_date|datetime|represent maximum expense creation date|yes|max_creation_date = 2020-01-01 00:00:00|
 |min_creation_date|datetime|represent minimum expense creation date|yes|min_creation_date = 2020-01-01 00:00:00|
 |cost_sort| enum("ASC","DESC")|represent expense cost sort criteria|yes|cost_sort = DESC|
 |creation_date_sort|enum("ASC","DESC")|represent expense creation date sort criteria|yes|creation_date_sort = ASC|
-|limit|integer|contains limit value to get the expences list|yes|limit=5|
+|limit|integer|contains limit value to get the expenses list|yes|limit=5|
 
 
 * response should be like 

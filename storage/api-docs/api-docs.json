@@ -2,7 +2,7 @@
     "openapi": "3.0.0",
     "info": {
         "title": "Afaqy task Documentation",
-        "description": "This service is providing endpoints to filter data of the vehicle expences from multi linked tables in the database through database view",
+        "description": "This service is providing endpoints to filter data of the vehicle expenses from multi linked tables in the database through database view",
         "contact": {
             "email": "minaatifabduallah@gmail.com"
         },
@@ -20,7 +20,7 @@
                     "Vehicle: Expenses"
                 ],
                 "summary": "Get list of the vechile expenses.",
-                "description": "This endpoint to list all the vehicle expences concerning the filter criteria",
+                "description": "This endpoint to list all the vehicle expenses concerning the filter criteria",
                 "operationId": "VechileExpensesList",
                 "parameters": [
                     {
@@ -83,7 +83,7 @@
                     {
                         "name": "cost_sort",
                         "in": "query",
-                        "description": "Apply sort filter to expences cost.",
+                        "description": "Apply sort filter to expenses cost.",
                         "schema": {
                             "type": "string",
                             "enum": [
@@ -95,7 +95,7 @@
                     {
                         "name": "creation_date_sort",
                         "in": "query",
-                        "description": "Apply sort filter to expences creation date.",
+                        "description": "Apply sort filter to expenses creation date.",
                         "schema": {
                             "type": "string",
                             "enum": [
@@ -107,7 +107,7 @@
                     {
                         "name": "limit",
                         "in": "query",
-                        "description": "Apply limit to the returned expences data.",
+                        "description": "Apply limit to the returned expenses data.",
                         "schema": {
                             "type": "integer"
                         }

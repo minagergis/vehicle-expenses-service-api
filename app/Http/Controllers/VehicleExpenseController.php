@@ -20,7 +20,7 @@ class VehicleExpenseController extends Controller
      * @OA\Info(
      *      version="1.0.0",
      *      title="Afaqy task Documentation",
-     *      description="This service is providing endpoints to filter data of the vehicle expences from multi linked tables in the database through database view",
+     *      description="This service is providing endpoints to filter data of the vehicle expenses from multi linked tables in the database through database view",
      *     @OA\Contact(
      *          email="minaatifabduallah@gmail.com"
      *      )
@@ -38,7 +38,7 @@ class VehicleExpenseController extends Controller
      *  path="/api/v1/expenses-list",
      *  tags={"Vehicle: Expenses"},
      *  summary="Get list of the vechile expenses.",
-     *  description="This endpoint to list all the vehicle expences concerning the filter criteria",
+     *  description="This endpoint to list all the vehicle expenses concerning the filter criteria",
      *  operationId="VechileExpensesList",
      *  @OA\Parameter(
      *      name="name", @OA\Schema(type="string"), in="query", description="Apply filtering by Vechile name.", required=false
@@ -59,13 +59,13 @@ class VehicleExpenseController extends Controller
      *      name="min_creation_date", @OA\Schema(type="datetime"), in="query", description="Apply filtering by minimum expense creation date.", required=false
      *  ),
      *  @OA\Parameter(
-     *      name="cost_sort", @OA\Schema(type="string", enum={"ASC", "DESC"}), in="query", description="Apply sort filter to expences cost."
+     *      name="cost_sort", @OA\Schema(type="string", enum={"ASC", "DESC"}), in="query", description="Apply sort filter to expenses cost."
      *  ),
      *  @OA\Parameter(
-     *      name="creation_date_sort", @OA\Schema(type="string", enum={"ASC", "DESC"}), in="query", description="Apply sort filter to expences creation date."
+     *      name="creation_date_sort", @OA\Schema(type="string", enum={"ASC", "DESC"}), in="query", description="Apply sort filter to expenses creation date."
      *  ),
      *  @OA\Parameter(
-     *      name="limit",@OA\Schema(type="integer"), in="query", description="Apply limit to the returned expences data."
+     *      name="limit",@OA\Schema(type="integer"), in="query", description="Apply limit to the returned expenses data."
      *  ),
      *  @OA\Response(response=200, description="successful operation", @OA\JsonContent(
      *       example={
@@ -95,7 +95,7 @@ class VehicleExpenseController extends Controller
 
 
     /**
-     * get expences list endpoint
+     * get expenses list endpoint
      * @param Filter $filters
      * @return mixed
      */

@@ -3,19 +3,13 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
-use Illuminate\Support\Facades\DB;
 
-class CreateVehicleExpencesView extends Migration
+class CreateVehicleExpensesView extends Migration
 {
     /**
      * Run the migrations.
      *
      * @return void
-     */
-
-    /**
-     * creating a view on the database tables
-     * to make it easy to retrieve data instead of join per each request
      */
     public function up()
     {
@@ -56,7 +50,6 @@ class CreateVehicleExpencesView extends Migration
             INNER JOIN
             `vehicles`
             on `services`.`vehicle_id` = `vehicles`.`id`
-
        ");
 
     }
@@ -68,6 +61,6 @@ class CreateVehicleExpencesView extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('vehicle_expences_view');
+        Schema::dropIfExists('vehicle_expenses_view');
     }
 }
